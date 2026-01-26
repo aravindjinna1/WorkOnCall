@@ -6,7 +6,7 @@ import  {Icon} from '@iconify/react'
 const Auths=()=>{
 
     const GoogleLogin = ()=>{
-    window.location.href='http://localhost:3000/api/google'; //GooglAuth
+    window.location.href='https://workoncall.onrender.com/api/google'; //GooglAuth
   }
 
   return(

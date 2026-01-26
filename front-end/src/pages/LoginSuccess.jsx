@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const LoginSuccess = () => {
   const navigate = useNavigate();
+
+  
 useEffect(() => {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token') || localStorage.getItem("token");

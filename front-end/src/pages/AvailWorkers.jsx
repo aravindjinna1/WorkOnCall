@@ -16,8 +16,8 @@ const WorkersDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const URl = searchText ? `http://localhost:3000/api/GetPosts/get-workers?search=${searchText}`
-                              : `http://localhost:3000/api/GetPosts/get-workers`
+        const URl = searchText ? `https://workoncall.onrender.com/api/GetPosts/get-workers?search=${searchText}`
+                               : `https://workoncall.onrender.com/api/GetPosts/get-workers`
 
            console.log(searchText);
                               

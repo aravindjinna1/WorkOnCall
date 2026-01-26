@@ -82,7 +82,7 @@ const Profile = () => {
   // if (!userData) return <p className="mt-50">Loading...</p>;
 
   const DeleteJobPost = async (postID) => {
-    await fetch(`http://localhost:3000/api/delete-post/job-post/${postID}`, {
+    await fetch(`https://workoncall.onrender.com/api/delete-post/job-post/${postID}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -59,7 +59,7 @@ const Worker = () => {
       formData.append("image", workerImage);
 
       const response = await axios.post(
-        "http://localhost:3000/api/WorkerDetails/post-worker",
+        "https://workoncall.onrender.com/api/WorkerDetails/post-worker",
         formData,
         { headers: { Authorization: `Bearer ${token}` } },
       );

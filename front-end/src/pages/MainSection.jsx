@@ -24,8 +24,8 @@ const ServicesList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const URL = searchText ? `http://localhost:3000/api/GetPosts/get-work?search=${searchText}`
-                               :`http://localhost:3000/api/GetPosts/get-work`
+        const URL = searchText ? `https://workoncall.onrender.com/api/GetPosts/get-work?search=${searchText}`
+                               :`https://workoncall.onrender.com/api/GetPosts/get-work`
         const res = await axios.get(URL);
         setData(res.data);
       } catch (err) {
@@ -76,6 +76,8 @@ const ServicesList = () => {
      </div>
      </div>
   );
+
 };
+
 
 export default ServicesList;

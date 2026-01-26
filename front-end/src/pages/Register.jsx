@@ -32,11 +32,12 @@ const Register = () => {
       [name]: value,
     }));
   };
+
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();    
     // console.log(data);
 
-    const res = fetch("http://localhost:3000/api/authentication/register-user", {
+    const res = fetch("https://workoncall.onrender.com/api/authentication/register-user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
