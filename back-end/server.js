@@ -19,7 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(passport.initialize())
 
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+}));
+
+
+app.options("*", cors());
+
+
 dbConnection();
 
 // app.use("/api", routes);
