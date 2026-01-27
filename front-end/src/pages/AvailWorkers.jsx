@@ -48,6 +48,7 @@ const WorkersDetails = () => {
           key={item._id}
           className=" p-4 rounded-[10px] shadow-[0_4px_20px_rgba(0,0,0,0.3)] mx-2 my-2 "
         >
+          <h1>Available Jobs & Works</h1>
                <div className="relative w-full h-40 overflow-hidden rounded-lg  group">
           <img
             src={item.imageUrl}

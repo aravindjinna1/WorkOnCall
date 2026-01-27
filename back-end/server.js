@@ -20,10 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize())
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    // methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: [
+        process.env.FRONTEND_URL,
+        process.env.LOCAL_URL
+    ],
     credentials: true,
 }));
+
 
 
 // app.options("/*", cors());

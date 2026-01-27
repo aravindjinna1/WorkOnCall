@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Auths from "./Auth";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
   // console.log("tttttttttttsgsdfgbfdhsnjwne4arTWN4ETR");
@@ -11,6 +12,12 @@ const Register = () => {
 
   const navigate = useNavigate();
   const [status, setStatus] = useState(false);
+
+   const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const [data, setData] = useState({
     fullname: "",
@@ -69,11 +76,11 @@ const Register = () => {
       <div className="grid place-items-center  my-30 ">
         <h1>Welcome to register Page</h1>
         <form
-          onSubmit={handleSubmit}
-          className=" border flex flex-col gap-2 p-6 md-w-100 w-90 shadow-[0_4px_20px_rgba(0,0,0,0.3)]  rounded-[5px]"
+          onSubmit={handleSubmit} 
+          className=" border flex flex-col gap-4 p-6 md:w-96 w-90 shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-lg"
         >
           <input
-            className="border px-1 py-1 "
+            className="px-4 py-3 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12   "
             name="fullname"
             type="text"
             placeholder="Enter your full name"
@@ -81,9 +88,10 @@ const Register = () => {
             value={data.fullname}
             required
           />
+          <div className="relative">
           <input
-            className="border px-1 py-1"
-            type="password"
+            className="px-4 py-3 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+           type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password"
             maxLength={15}
             minLength={6}
@@ -91,9 +99,17 @@ const Register = () => {
             onChange={handleChange}
             value={data.password}
             required
-          />
+          /> <button 
+          type="button"
+          onClick={togglePasswordVisibility}
+          className="toggle-btn absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 p-1 focus:outline-none "
+        >
+          {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </button>
+
+        </div>
           <input
-            className="border px-1 py-1 bg-[#F5F5F5]"
+            className="px-4 py-3 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
             type="text"
             placeholder="Enter your mobile number"
             name="phonenumber"
@@ -106,7 +122,7 @@ const Register = () => {
           />
           <button
             type="submit"
-            className="border bg-black  text-white rounded-[5px] px-1 py-1 cursor-pointer"
+            className=" px-3 py-2 border bg-black  text-white rounded-[5px] px-1 py-1 cursor-pointer"
           >
             Register
           </button>
