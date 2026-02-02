@@ -9,8 +9,8 @@ const MobileMenu = () => {
     <div>
       
          {isMenuOpen &&(
-         <div className="z-20 fixed absolute right-[10%] flex flex-col items-center justify-center bg-black w-[300px] h-[300px] rounded shadow ">
-        <button className="text-white cursor-pointer text-3xl relative top-[-10%]" onClick={() => setIsMenuOpen(false)}>✖</button>
+         <div className="z-20 fixed absolute right-[10%] flex flex-col items-center justify-center  w-[300px] h-[300px]      bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-6 ">
+        {/* <button className="text-white cursor-pointer text-3xl relative top-[-10%]" onClick={() => setIsMenuOpen(false)}>✖</button> */}
 
         <ul className="text-[12px] gap-4  flex-col flex gap-4">
           <Link to="/">

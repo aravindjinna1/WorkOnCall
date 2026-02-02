@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
 // import { useSearchInp } from "./SearchContext";
+import PostSkeleton  from "./Loader";
 
 import { useSearch } from "./SearchContext";
 
@@ -39,12 +40,31 @@ const ServicesList = () => {
     fetchData();
   }, [searchText]);
 
-  if (loading) return <p>Loading...</p>;
+  // if (loading) return <p className="text-black mt-80 text-3xl text-center" >Loading...</p>;
+
+  // if(loading) return <DotsLoader />
+
   if (error) return <p>{error}</p>;
 
   return (
     <div>
-    <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 mt-45 mx-5 ">
+             <h1 className="md:mt-35 mt-40 text-center text-3xl">Available Jobs & Works</h1>
+
+{/* {loading && (
+  <DotsLoader />
+)} */}
+{/* {loading &&( [...Array(3)].map((_, i) => (
+  <DotsLoader key={i} />
+)))} */}
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+  {loading && ([...Array(9)].map((_, i) => (
+    <PostSkeleton key={i} />
+  )))}
+</div>
+
+
+    <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 mx-5 ">
       {data.map((item) => (
         <div
           key={item._id}

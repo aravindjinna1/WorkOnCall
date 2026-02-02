@@ -32,7 +32,8 @@ const Home = () => {
               to={"/Avail-workers"}
               className="bg-black text-center text-white cursor-pointer w-full p-1 rounded"
             >
-              Explore Available 
+              Check Availability 
+              {/* Find Workers */}
             </Link>
               <Link
               to={"/Post-Work"}
@@ -63,7 +64,7 @@ const Home = () => {
               className="bg-white text-black cursor-pointer w-full p-1 text-center rounded "
               to={"/works"}
             >
-              Explore Available
+              Check Availability
             </Link>
                 <Link
               className="bg-white text-black cursor-pointer w-full p-1 text-center rounded "
