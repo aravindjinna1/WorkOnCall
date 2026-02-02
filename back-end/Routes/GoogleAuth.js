@@ -56,7 +56,7 @@ router.get(
   passport.authenticate("google", { session: false }),
   (req, res) => {
     const token = createToken(req.user);
-    res.redirect(`http://localhost:5173/login-success?token=${token}`);
+    res.redirect(`https://work-on-call.vercel.app/login-success?token=${token}`);
     
   }
 );
